@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Authify - Spring Boot JWT Authentication System
 
 A robust, scalable backend system built with **Spring Boot** to handle user authentication and profile management using **JWT tokens stored in HTTP-only cookies** for secure session handling.
@@ -28,3 +29,6 @@ A robust, scalable backend system built with **Spring Boot** to handle user auth
 ---
 
 
+=======
+# Backend
+>>>>>>> 1f80c56 (first commit)

@@ -126,6 +126,14 @@ public class ProfileServiceImpl implements ProfileService {
 
     }
 
+    @Override
+    public long getrole(String email) {
+        UserEntity user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        return user.getRole();
+    }
+
+
 
     private ProfileResponse convertToProfileResponse(UserEntity newProfile) {
         return ProfileResponse.builder()
@@ -150,4 +158,8 @@ public class ProfileServiceImpl implements ProfileService {
                 .resetOtp(null)
                 .build();
     }
+
+
+
+
 }

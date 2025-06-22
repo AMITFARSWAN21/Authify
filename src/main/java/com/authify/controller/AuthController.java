@@ -158,6 +158,15 @@ public class AuthController {
                 .body("Logout successful");
     }
 
+    @GetMapping("/role")
+    public ResponseEntity<Map<String, Long>> getRoleByEmail(@RequestParam String email) {
+        long role = profileService.getrole(email);
+
+        Map<String, Long> response = new HashMap<>();
+        response.put("role", role);
+
+        return ResponseEntity.ok(response);
+    }
 
 
 

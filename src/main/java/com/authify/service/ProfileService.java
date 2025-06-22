@@ -17,6 +17,6 @@ public interface ProfileService {
 
     void verifyOtp(String email,String Otp);
 
-
+    long getrole(String email);
 }
 

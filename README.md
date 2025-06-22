@@ -47,19 +47,19 @@ src/
 
 ## 📦 API Endpoints
 
-### 🔐 AuthController `/api/v1.0`
 
-| Method | Endpoint               | Description                                      |
+### 👤 AuthController /api/v1.0
 
-|--------|------------------------|--------------------------------------------------|
-| POST   | `/login`               | Authenticate and return JWT in HttpOnly cookie   |
-| POST   | `/logout`              | Clear the JWT cookie                             |
-| POST   | `/send-otp`            | Send OTP to registered email                     |
-| POST   | `/verify-otp`          | Verify the entered OTP                           |
-| POST   | `/reset-password`      | Reset password using OTP                         |
-| GET    | `/is-authenticated`    | Check if JWT is valid                            |
-| GET    | `/role?email=...`      | Get user role by email                           |
-| POST   | `/send-resend-otp`     | Send or resend OTP for verification              |
+| Method | Endpoint            | Description                                    |
+| ------ | ------------------- | ---------------------------------------------- |
+| POST   | `/login`            | Authenticate and return JWT in HttpOnly cookie |
+| POST   | `/logout`           | Clear the JWT cookie                           |
+| POST   | `/send-otp`         | Send OTP to registered email                   |
+| POST   | `/verify-otp`       | Verify the entered OTP                         |
+| POST   | `/reset-password`   | Reset password using OTP                       |
+| GET    | `/is-authenticated` | Check if JWT is valid                          |
+| GET    | `/role?email=...`   | Get user role by email                         |
+| POST   | `/send-resend-otp`  | Send or resend OTP for verification            |
 
 ---
 

@@ -21,7 +21,7 @@ public class EmailService {
         message.setTo(toEmail);
         message.setSubject("Welcome on our platform");
         message.setText("Hello " + name + ",\n\nThanks for registering with us!\n\nRegards,\nAuthify Team");
-        mailSender.send(message); // <-- Important: actually send the email
+        mailSender.send(message);
     }
 
     public void sendResetOtpEmail(String toEmail, String otp) {
@@ -42,6 +42,16 @@ public class EmailService {
         message.setText("Your OTP code is: " + otp + "\n Verify your Account using this Otp.");
         mailSender.send(message);
     }
+
+    public void sendNotesAddedEmail(String toEmail, String name, String noteTitle) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom(fromEmail);
+        message.setTo(toEmail);
+        message.setSubject("New Note Uploaded");
+        message.setText("Hello " + name + ",\n\nA new note titled \"" + noteTitle + "\" has been uploaded. Please check your portal to view/download it.\n\nRegards,\nAuthify Team");
+        mailSender.send(message);
+    }
+
 
 
 }

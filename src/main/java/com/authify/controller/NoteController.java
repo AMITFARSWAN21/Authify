@@ -1,6 +1,12 @@
 package com.authify.controller;
 import com.authify.entity.Note;
+import com.authify.entity.Student;
+import com.authify.entity.UserEntity;
 import com.authify.repository.NoteRepository;
+import com.authify.repository.StudentRepository;
+import com.authify.repository.UserRepository;
+import com.authify.service.EmailService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -14,10 +20,20 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1.0/notes")
+@RequiredArgsConstructor
 public class NoteController {
 
     @Autowired
     private NoteRepository noteRepository;
+
+    @Autowired
+    private StudentRepository studentRepository;
+
+    @Autowired
+    private EmailService emailService;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping
     public ResponseEntity<List<Note>> getAllNotes() {
@@ -42,6 +58,11 @@ public class NoteController {
         }
 
         noteRepository.save(note);
+        List<UserEntity> students = userRepository.findByRole(1L); // assuming 1L = student
+        for (UserEntity student : students) {
+            emailService.sendNotesAddedEmail(student.getEmail(), student.getName(), note.getTitle());
+        }
+
         return ResponseEntity.ok("Note saved successfully");
     }
 

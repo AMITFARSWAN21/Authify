@@ -61,10 +61,21 @@ public class SecurityConfig {
 
     private CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:5174"));
+
+        config.setAllowedOrigins(List.of(
+                "http://localhost:5174",
+                "https://edunotes-five.vercel.app"
+        ));
+
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
+
+        // 🟢 VERY IMPORTANT: Expose Authorization so frontend can access JWT
+        config.setExposedHeaders(List.of("Authorization"));
+
+        // Allow cookies, Authorization header, etc.
         config.setAllowCredentials(true);
+
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
         return source;

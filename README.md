@@ -7,13 +7,71 @@ Built using **Spring Boot**, it includes robust **JWT authentication**, **file h
 
 ## 🚀 Features
 
-- ✅ Student registration and login with JWT cookies  
-- ✅ Email verification and OTP-based password reset  
-- ✅ Upload and download PDF notes  
-- ✅ Profile fetch with current user context  
-- ✅ Logout with cookie clearance  
-- ✅ Role-based route access (e.g., admin dashboard)  
-- ✅ Clean RESTful APIs with exception handling  
+✅ Secure JWT Authentication (with Cookies)
+
+Student registration and login system using JWT stored in HTTP-only cookies.
+
+Role-based route access (student, admin).
+
+✅ Email Verification & OTP-based Password Reset
+
+Automatic email verification on signup.
+
+OTP-based reset functionality for forgotten passwords.
+
+✅ User Profile Management
+
+Fetch profile of the logged-in user via JWT context.
+
+Welcome email sent on successful registration.
+
+✅ Certificate Generator
+
+Generate stylish PDF certificates from form data.
+
+Download certificate using certificate ID.
+
+✅ Student Registration System
+
+Store and fetch detailed student information via RESTful APIs.
+
+✅ Marks Registration Module
+
+Add marks per student with duplicate checks.
+
+Fetch all stored marks records.
+
+✅ AI-based Notes Summarizer
+
+Upload handwritten or typed notes as PDF.
+
+Get AI-generated summaries and key concepts from uploaded notes.
+
+Save processed summaries to the database.
+
+✅ Study Plan Generator (AI-powered)
+
+Personalized study plans using student name and subject/topic inputs.
+
+Returns structured output to guide student learning.
+
+✅ PDF Upload and Download Support
+
+Upload and retrieve user-generated content like notes and certificates.
+
+All downloads served as proper application/pdf with filename headers.
+
+✅ Admin Dashboard Support
+
+Role-based access to admin routes for user and content management.
+
+✅ Clean RESTful API Architecture
+
+Organized controller structure.
+
+Consistent API versioning (/api/v1.0/).
+
+Global exception handling and response management.
 
 ---
 
@@ -80,6 +138,43 @@ src/
 | POST   | `/`                   | Upload a note with title, desc, date, PDF |
 | DELETE | `/{id}`               | Delete a note by its ID                   |
 | GET    | `/{id}/download`      | Download the note as a PDF                |
+
+
+📘 Certificate APIs
+
+| Method | Endpoint                               | Description                    | Auth Required |
+| ------ | -------------------------------------- | ------------------------------ | ------------- |
+| `POST` | `/api/v1.0/certificates/generate`      | Generate a PDF certificate     | ✅             |
+| `GET`  | `/api/v1.0/certificates/download/{id}` | Download certificate PDF by ID | ✅             |
+
+
+Student APIs
+
+| Method | Endpoint                     | Description                 | Auth Required |
+| ------ | ---------------------------- | --------------------------- | ------------- |
+| `POST` | `/api/v1.0/student/register` | Register a student          | ✅             |
+| `GET`  | `/api/v1.0/student`          | Get all registered students | ✅             |
+
+📘 Marks APIs
+
+| Method | Endpoint                   | Description                       | Auth Required |
+| ------ | -------------------------- | --------------------------------- | ------------- |
+| `POST` | `/api/v1.0/marks/register` | Add marks for a student           | ✅             |
+| `GET`  | `/api/v1.0/marks`          | Get all students with their marks | ✅             |
+
+
+📘 Notes Summarizer APIs
+
+| Method | Endpoint                         | Description                      | Auth Required |
+| ------ | -------------------------------- | -------------------------------- | ------------- |
+| `POST` | `/api/v1.0/summarizer/summarize` | Upload and summarize a notes PDF | ✅             |
+
+📘 Study Plan AI APIs
+
+| Method | Endpoint                           | Description                               | Auth Required |
+| ------ | ---------------------------------- | ----------------------------------------- | ------------- |
+| `POST` | `/api/v1.0/study-plan-ai/generate` | Generate personalized study plan using AI | ✅             |
+
 
 ---
 

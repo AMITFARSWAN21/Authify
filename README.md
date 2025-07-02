@@ -76,15 +76,40 @@ Global exception handling and response management.
 
 ## 🧱 Tech Stack
 
-- Java 17  
-- Spring Boot 3  
-- Spring Security  
-- JWT Authentication  
-- MySQL (or H2 for testing)  
-- Lombok  
-- Maven  
-- React (Frontend) – connected via API  
+🔧 Backend
+Java 21 / 24
 
+Spring Boot 3
+
+Spring Security – Authentication and authorization
+
+JWT (JSON Web Token) – Secure user sessions with HTTP-only cookies
+
+Spring Data JPA – ORM for database operations
+
+MySQL – Primary database (H2 used for in-memory testing)
+
+Lombok – Reduces boilerplate code (getters, setters, constructors, etc.)
+
+Maven – Build automation and dependency management
+
+🌐 Frontend
+
+React – Single Page Application (SPA)
+
+Fetch API / Axios – REST API communication
+
+Role-based routing – Dashboard access for student/admin
+
+Drag-and-drop – For uploading PDFs in the Notes Summarizer
+
+🤖 AI Integration
+
+Gemini API – Powers AI-based features like:
+
+Notes summarization from uploaded PDFs
+
+Personalized study plan generation
 ---
 
 ## 📁 Project Structure (Backend)

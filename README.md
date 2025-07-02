@@ -1,8 +1,7 @@
 # 📘 EduNotes - Backend (Spring Boot)
 
-**EduNotes** is a secure and user-friendly platform for students to register, log in, upload notes (PDFs), and manage their profiles.  
-Built using **Spring Boot**, it includes robust **JWT authentication**, **file handling**, and **role-based access**.
-
+EduNotes is a secure, AI-powered platform where students can register, log in, upload PDF notes, and manage their profiles with ease.
+Built with Spring Boot and React, it features JWT-based authentication, role-based access control, and PDF handling — offering a smooth and structured academic experience.
 ---
 
 ## 🚀 Features
@@ -90,14 +89,14 @@ Global exception handling and response management.
 
 ## 📁 Project Structure (Backend)
 
-src/
-├── controller/ # API endpoints
-├── entity/ # JPA entity classes
-├── repository/ # Spring Data JPA interfaces
-├── service/ # Business logic
-├── io/ # DTOs for input/output
-├── utils/ # JWT utilities and helpers
-
+| Folder Name   | Purpose / Contents                                                                               |
+| ------------- | ------------------------------------------------------------------------------------------------ |
+| `controller/` | Contains all REST API controller classes (`@RestController`) that handle incoming HTTP requests. |
+| `entity/`     | Contains JPA entity classes that map to database tables.                                         |
+| `repository/` | Contains Spring Data JPA repository interfaces for database operations.                          |
+| `service/`    | Contains service layer classes that implement business logic.                                    |
+| `io/`         | Contains DTOs (Data Transfer Objects) for request/response payloads.                             |
+| `utils/`      | Contains utility classes such as JWT utilities, token helpers, and constants.                    |
 
 
 
